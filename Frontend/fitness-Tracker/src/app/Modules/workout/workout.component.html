@@ -1,0 +1,115 @@
+<div class="container workout-management">
+  <h2 class="title">Workout Management</h2>
+
+  <div class="workout-list">
+    <h3 class="subtitle">Your Workouts</h3>
+    <div *ngFor="let workout of workouts" class="card workout-card">
+      <div class="card-body">
+        <div class="workout-details">
+          <h4 class="workout-type">
+            <i class="fas fa-dumbbell"></i> {{ workout.type }}
+          </h4>
+          <p class="workout-duration">
+            <i class="fas fa-clock"></i> {{ workout.duration }} minutes
+          </p>
+        </div>
+        <div class="workout-completion">
+          <span>Completed:</span>
+          <input
+            type="checkbox"
+            [checked]="workout.completed"
+            (change)="markWorkoutAsCompleted(workout.id!)"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Add Workout Form -->
+<!-- <div class="add-workout-form">
+  <h3>Add a New Workout</h3>
+  <form (ngSubmit)="addWorkout()">
+    <label for="type">Type:</label>
+    <input id="type" [(ngModel)]="newWorkout.type" name="type" required />
+
+    <label for="duration">Duration (minutes):</label>
+    <input id="duration" type="number" [(ngModel)]="newWorkout.duration" name="duration" required />
+
+    <label for="date">Date:</label>
+    <input id="date" type="date" [(ngModel)]="newWorkout.date" name="date" required />
+
+    <label for="caloriesBurned">Calories Burned:</label>
+    <input id="caloriesBurned" type="number" [(ngModel)]="newWorkout.caloriesBurned" name="caloriesBurned" />
+
+    <button type="submit">Add Workout</button>
+  </form>
+</div> -->
+
+<!-- Workout List -->
+<!-- <div class="workout-list">
+  <h3>Your Workouts</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Duration (minutes)</th>
+        <th>Date</th>
+        <th>Calories Burned</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let workout of workouts">
+        <td>{{ workout.type }}</td>
+        <td>{{ workout.duration }}</td>
+        <td>{{ workout.date | date }}</td>
+        <td>{{ workout.caloriesBurned }}</td>
+        <td>
+          <button (click)="deleteWorkout(workout.id!)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+
+
+<!-- <div class="workout-container">
+  <h2>Add Workout</h2>
+  <p *ngIf="message" class="message">{{ message }}</p>
+
+   Form for logging workout -->
+  <!-- <form (ngSubmit)="logWorkout()" class="workout-form">
+    <label>
+      Type:
+      <input type="text" [(ngModel)]="newWorkout.type" name="type" required />
+    </label>
+    <label>
+      Duration (minutes):
+      <input type="number" [(ngModel)]="newWorkout.duration" name="duration" required />
+    </label>
+    <label>
+      Date:
+      <input type="date" [(ngModel)]="newWorkout.date" name="date" required />
+    </label>
+    <label>
+      Calories Burned:
+      <input type="number" [(ngModel)]="newWorkout.caloriesBurned" name="caloriesBurned" required />
+    </label>
+    <button type="submit" class="btn btn-primary">Log Workout</button>
+  </form>
+</div>
+  List of workouts -->
+  <!-- <div class="workout-list">
+    <h3>Your Workouts</h3>
+    <div *ngIf="workouts.length === 0">No workouts logged yet.</div>
+    <ul>
+      <li *ngFor="let workout of workouts">
+        {{ workout.date | date: 'yyyy-MM-dd' }} - {{ workout.type }}
+        <button (click)="editWorkout(workout)" class="btn btn-secondary">Edit</button> -->
+        <!-- <button (click)="deleteWorkout(workout.id)" class="btn btn-danger">Delete</button> -->
+      <!-- </li>
+    </ul>
+  </div>  -->
+  

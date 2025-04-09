@@ -1,0 +1,33 @@
+<h1>Nutrition Records</h1>
+<div>
+    <h1>Nutrition Records</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Daily Calories</th>
+          <th>Daily Protein</th>
+          <th>Daily Carbs</th>
+          <th>Daily Fats</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let nutrition of nutritionRecords">
+          <td>{{ nutrition.id }}</td>
+          <td>{{ nutrition.dailyCalories }}</td>
+          <td>{{ nutrition.dailyProtein }}</td>
+          <td>{{ nutrition.dailyCarbs }}</td>
+          <td>{{ nutrition.dailyFats }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="dailyNutrition">
+      <h2>Daily Nutrition</h2>
+      <p>Calories: {{ dailyNutrition.dailyCalories }}</p>
+      <p>Protein: {{ dailyNutrition.dailyProtein }}</p>
+      <p>Carbs: {{ dailyNutrition.dailyCarbs }}</p>
+      <p>Fats: {{ dailyNutrition.dailyFats }}</p>
+    </div>
+  </div>
+  

@@ -1,0 +1,87 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: #2e3b4e;
+    color: white;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 40px;
+    margin-right: 10px;
+  }
+  
+  .navbar ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+  
+ /* Add this CSS to your stylesheet */
+.navbar ul li a {
+  font-size: 18px; /* Increase the font size */
+  color:cornsilk; /* Change the text color */
+  text-decoration: none; /* Remove underline */
+  padding: 10px 15px; /* Add padding */
+  border-radius: 5px; /* Add rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.navbar ul li a:hover {
+  background-color: #0056b3; /* Change background color on hover */
+  color: #ffffff; /* Change text color on hover */
+}
+
+  
+  .auth-links a {
+    margin-left: 15px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  .auth-links .login-btn {
+    color: white;
+    border: 1px solid #1ec5c9;
+  }
+  
+  .auth-links .signup-btn {
+    background: #1ec5c9;
+    color: white;
+  }
+  
+  .auth-links .login-btn:hover,
+  .auth-links .signup-btn:hover {
+    background: white;
+    color: #1ec5c9;
+  }
+  /* Add this CSS to your stylesheet */
+.auth-links span {
+  font-size: 16px; /* Increase font size */
+  color:rgb(245, 240, 235); /* Change text color */
+  font-weight: bold; /* Make text bold */
+  margin-right: 10px; /* Add space between text and button */
+}
+
+.auth-links button {
+  font-size: 16px; /* Increase font size */
+  color: #ffffff; /* Change text color */
+  background-color: #007BFF; /* Change background color */
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Add padding */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.auth-links button:hover {
+  background-color: #0056b3; /* Change background color on hover */
+}

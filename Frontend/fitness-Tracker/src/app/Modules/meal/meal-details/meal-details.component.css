@@ -1,0 +1,81 @@
+/* Container Styling */
+.meal-details-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  .meal-details-container h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  /* Meal Details Styling */
+  .meal-details p {
+    font-size: 1rem;
+    margin: 8px 0;
+    color: #34495e;
+  }
+  
+  .meal-details p strong {
+    color: #2c3e50;
+  }
+  
+  .meal-details .rating i {
+    color: #f1c40f;
+    margin-right: 5px;
+  }
+  
+  /* Conditional Styling for Liked */
+  .meal-details .liked {
+    color: #e74c3c;
+    font-weight: bold;
+  }
+  
+  .meal-details .not-liked {
+    color: #7f8c8d;
+  }
+  
+  /* Conditional Styling for Availability */
+  .meal-details .available {
+    color: #27ae60;
+    font-weight: bold;
+  }
+  
+  .meal-details .not-available {
+    color: #e74c3c;
+  }
+  
+  /* Back Button Styling */
+  button.btn-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #34495e;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  button.btn-back i {
+    margin-right: 5px;
+  }
+  
+  button.btn-back:hover {
+    background-color: #2c3e50;
+    transform: scale(1.05);
+  }
+  

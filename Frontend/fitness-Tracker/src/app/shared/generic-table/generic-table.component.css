@@ -1,0 +1,18 @@
+.generic-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .generic-table th,
+  .generic-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .generic-table th {
+    background-color: #f4f4f4;
+    text-align: left;
+    font-weight: bold;
+  }
+  

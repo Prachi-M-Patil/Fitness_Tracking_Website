@@ -1,0 +1,66 @@
+<div class="edit-meal-container">
+  <h2>{{ meal.id ? 'Edit Meal' : 'Add Meal' }}</h2>
+  <form (ngSubmit)="updateMeal()" class="edit-meal-form">
+
+    <!-- Name -->
+    <div class="form-group">
+      <label for="name"><i class="fas fa-utensils"></i> Name:</label>
+      <input id="name" type="text" [(ngModel)]="meal.name" name="name" required class="form-control" placeholder="Enter meal name" />
+    </div>
+
+    <!-- Type -->
+    <div class="form-group">
+      <label for="mealtype"><i class="fas fa-utensil-spoon"></i> Type:</label>
+      <input id="mealtype" type="text" [(ngModel)]="meal.mealtype" name="mealtype" required class="form-control" placeholder="Breakfast, Lunch, etc." />
+    </div>
+
+    <!-- Calories -->
+    <div class="form-group">
+      <label for="calories"><i class="fas fa-fire"></i> Calories:</label>
+      <input id="calories" type="number" [(ngModel)]="meal.calories" name="calories" required class="form-control" placeholder="e.g., 250" />
+    </div>
+
+    <!-- Protein -->
+    <div class="form-group">
+      <label for="protein"><i class="fas fa-drumstick-bite"></i> Protein (g):</label>
+      <input id="protein" type="number" [(ngModel)]="meal.protein" name="protein" required class="form-control" placeholder="e.g., 30" />
+    </div>
+
+    <!-- Carbs -->
+    <div class="form-group">
+      <label for="carbs"><i class="fas fa-bread-slice"></i> Carbs (g):</label>
+      <input id="carbs" type="number" [(ngModel)]="meal.carbs" name="carbs" required class="form-control" placeholder="e.g., 50" />
+    </div>
+
+    <!-- Fats -->
+    <div class="form-group">
+      <label for="fats"><i class="fas fa-bacon"></i> Fats (g):</label>
+      <input id="fats" type="number" [(ngModel)]="meal.fats" name="fats" required class="form-control" placeholder="e.g., 10" />
+    </div>
+
+    <!-- Rating -->
+    <div class="form-group">
+      <label for="rating"><i class="fas fa-star"></i> Rating:</label>
+      <input id="rating" type="number" [(ngModel)]="meal.rating" name="rating" required class="form-control" placeholder="e.g., 4.5" step="0.1" />
+    </div>
+
+    <!-- Liked -->
+    <div class="form-group">
+      <label><i class="fas fa-heart"></i> Liked:</label>
+      <input type="checkbox" [(ngModel)]="meal.liked" name="liked" class="form-check-input" />
+    </div>
+
+    <!-- Available -->
+    <div class="form-group">
+      <label><i class="fas fa-check-circle"></i> Available:</label>
+      <input type="checkbox" [(ngModel)]="meal.available" name="available" class="form-check-input" />
+    </div>
+
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn-submit"><i class="fas fa-save"></i> {{ meal.id ? 'Update Meal' : 'Add Meal' }}</button>
+  </form>
+
+  <!-- Back Button -->
+  <button [routerLink]="['/meal-list']" class="btn-back"><i class="fas fa-arrow-left"></i> Back to List</button>
+</div>

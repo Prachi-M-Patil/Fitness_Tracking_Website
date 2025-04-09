@@ -1,0 +1,110 @@
+/* General Styling for Goal Cards */
+.goal-card {
+  position: relative; /* Required for positioning elements inside the card */
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.goal-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Header and Status Styling */
+.goal-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #007bff;
+  display: flex;
+  align-items: center;
+}
+
+.goal-card h3::before {
+  content: '\f091'; /* FontAwesome icon */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  margin-right: 10px;
+  color: #34495e;
+}
+
+.goal-card p {
+  font-size: 1rem;
+  margin: 8px 0;
+  color: #7f8c8d;
+}
+
+.goal-card p span {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Progress Bar Styling */
+.progress-bar {
+  width: 100%;
+  background: #ecf0f1;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 15px;
+  margin-top: 10px;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  background: #1abc9c;
+  transition: width 0.5s ease-in-out;
+}
+
+/* Status Badge */
+.status {
+  margin-top: 10px; /* Add space from other elements */
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.status.in-progress {
+  background-color: #f39c12;
+  color: #ffffff;
+}
+
+.status.achieved {
+  background-color: #27ae60;
+  color: #ffffff;
+}
+
+/* Delete Button Styling */
+button.delete-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px; /* Properly positioned in the top-right corner of the card */
+  background-color: #e74c3c;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1; /* Ensures it stays above other elements */
+}
+
+button.delete-btn:hover {
+  background-color: #c0392b;
+  transform: scale(1.1);
+}
+
+button.delete-btn i {
+  font-size: 1rem;
+}

@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const activityService_1 = require("../services/activityService");
+const activityController_1 = require("../controllers/activityController");
+const authMiddleware_1 = require("../middlewares/authMiddleware");
+const router = (0, express_1.Router)();
+const activityService = new activityService_1.ActivityService();
+const activityController = new activityController_1.ActivityController(activityService);
+router.post('/', (0, authMiddleware_1.authMiddleware)(['admin']), (req, res) => activityController.addActivity(req, res));
+router.put('/:id', (0, authMiddleware_1.authMiddleware)(['admin']), (req, res) => activityController.updateActivity(req, res));
+router.delete('/:id', (0, authMiddleware_1.authMiddleware)(['admin']), (req, res) => activityController.deleteActivity(req, res));
+router.get('/:id', (0, authMiddleware_1.authMiddleware)(['admin', 'user']), (req, res) => activityController.getActivityById(req, res));
+router.get('/', (0, authMiddleware_1.authMiddleware)(['admin', 'user']), (req, res) => activityController.getAllActivities(req, res));
+router.get('/user/:userId', (0, authMiddleware_1.authMiddleware)(['admin', 'user']), (req, res) => activityController.getUserActivities(req, res));
+exports.default = router;

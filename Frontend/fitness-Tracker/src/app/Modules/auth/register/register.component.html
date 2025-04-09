@@ -1,0 +1,35 @@
+<div class="auth-container">
+    <div class="auth-card">
+      <h2>Create an Account</h2>
+      <p class="subtitle">Join us and get started!</p>
+  
+      <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input id="username" name="username" [(ngModel)]="user.username" placeholder="Choose a username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" [(ngModel)]="user.password" placeholder="Create a password" required />
+        </div>
+        <div class="form-group">
+          <label for="mobile">Mobile</label>
+          <input id="mobile" name="mobile" [(ngModel)]="user.mobile" placeholder="Enter your mobile number" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" [(ngModel)]="user.email" placeholder="Enter your email" required />
+        </div>
+        <!-- <div class="form-group">
+          <label for="role">Role</label>
+          <input id="role" name="role" [(ngModel)]="user.role" placeholder="Enter your role (e.g., user/admin)" required />
+        </div> -->
+        <button class="primary-btn" type="submit" [disabled]="!registerForm.valid">Register</button>
+      </form>
+  
+      <p class="toggle">
+        Already have an account? <a href="#" (click)="toggleToLogin()">Log in here</a>
+      </p>
+    </div>
+  </div>
+  

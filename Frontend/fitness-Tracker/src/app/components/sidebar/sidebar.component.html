@@ -1,0 +1,18 @@
+<div class="sidebar" [class.active]="isSidebarOpen">
+    <div class="sidebar-header">
+      <h2>Fitness Tracker</h2>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+        <li><a routerLink="/meal" routerLinkActive="active">Meals</a></li>
+        <li><a routerLink="/workout" routerLinkActive="active">Workouts</a></li>
+        <li><a routerLink="/goal" routerLinkActive="active">Progress</a></li>
+        <li><a routerLink="/profile/{{ userId }}" routerLinkActive="active">Profile</a></li>
+      </ul>
+    </nav>
+  </div>
+
+ 
+  
+  

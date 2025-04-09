@@ -1,0 +1,88 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened>
+    <mat-toolbar color="primary">Admin Dashboard</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item (click)="setSection('dashboard')" [class.active-link]="currentSection === 'dashboard'">
+        <mat-icon>dashboard</mat-icon>
+        <span>Admin Dashboard</span>
+      </a>
+      <a mat-list-item (click)="setSection('add-user')" [class.active-link]="currentSection === 'add-user'">
+        <mat-icon>person_add</mat-icon>
+        <span>Add User</span>
+      </a>
+      <a mat-list-item (click)="setSection('active-users')" [class.active-link]="currentSection === 'active-users'">
+        <mat-icon>people</mat-icon>
+        <span>Active Users</span>
+      </a>
+      <a mat-list-item (click)="setSection('deactivated-users')" [class.active-link]="currentSection === 'deactivated-users'">
+        <mat-icon>person_off</mat-icon>
+        <span>Deactivated Users</span>
+      </a>
+      <!-- Add more links as needed -->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="container">
+      <h2>Admin Dashboard</h2>
+
+      <div *ngIf="currentSection === 'dashboard'">
+        <p>Welcome to the Admin Dashboard!</p>
+        <!-- Add dashboard content here -->
+      </div>
+
+      <div *ngIf="currentSection === 'add-user'">
+        <h3>Add User</h3>
+        <form (ngSubmit)="addUser()">
+          <label for="username">Username:</label>
+          <input type="text" [(ngModel)]="userData.username" name="username" required>
+
+          <label for="email">Email:</label>
+          <input type="email" [(ngModel)]="userData.email" name="email" required>
+
+          <label for="password">Password:</label>
+          <input type="password" [(ngModel)]="userData.password" name="password" required>
+
+          <label for="mobile">Mobile:</label>
+          <input type="text" [(ngModel)]="userData.mobile" name="mobile" required>
+
+          <label for="role">Role:</label>
+          <select [(ngModel)]="userData.role" name="role" required>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
+
+          <button type="submit">Add User</button>
+        </form>
+      </div>
+
+      <div *ngIf="currentSection === 'active-users'">
+        <h3>Active Users</h3>
+        <ul>
+          <li *ngFor="let user of users">
+            <div class="user-info">
+              {{ user.username }} ({{ user.email }})
+              <div class="user-actions">
+                <button *ngIf="user.id !== undefined" (click)="confirmDeactivateUser(user.id!)">Deactivate</button>
+                <button *ngIf="user.id !== undefined" (click)="updateUser(user.id!)">Update</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div *ngIf="currentSection === 'deactivated-users'">
+        <h3>Deactivated Users</h3>
+        <ul>
+          <li *ngFor="let user of deactivatedUsers">
+            <div class="user-info">
+              {{ user.username }} ({{ user.email }})
+              <div class="user-actions">
+                <button *ngIf="user.id !== undefined" (click)="activateUser(user.id!)">Reactivate</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,82 @@
+.sidenav-container {
+  height: 100vh; /* Full viewport height */
+}
+
+mat-sidenav-content {
+  height: 100%;
+  overflow: auto; /* Enable scrolling for the content */
+}
+
+.container {
+  padding: 16px; /* Add padding to the container */
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h2, h3 {
+  color: #2c3e50;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #ecf0f1;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.user-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.active-link {
+  background-color: rgba(0, 0, 0, 0.1);
+}

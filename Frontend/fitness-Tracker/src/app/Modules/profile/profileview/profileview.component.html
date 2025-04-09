@@ -1,0 +1,49 @@
+<div class="profile-container" *ngIf="profile$ | async as profile">
+  <div class="profile-header">
+    <h2>User Profile</h2>
+  </div>
+  
+  <div class="profile-content">
+    <div class="profile-image-card">
+      <div class="image-container">
+        <img *ngIf="profile.profilePicture" [src]="profile.profilePicture" alt="Profile Picture" class="profile-picture" />
+        <div *ngIf="!profile.profilePicture" class="no-image">
+          <i class="fa fa-user"></i>
+          <p>No profile picture uploaded.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="profile-details">
+      <div class="detail-item">
+        <span class="detail-label">Name:</span>
+        <span class="detail-value">{{ profile.name }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Age:</span>
+        <span class="detail-value">{{ profile.age }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Gender:</span>
+        <span class="detail-value">{{ profile.gender }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Weight:</span>
+        <span class="detail-value">{{ profile.weight }} kg</span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Height:</span>
+        <span class="detail-value">{{ profile.height }} cm</span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Fitness Level:</span>
+        <span class="detail-value">{{ profile.fitnessLevel }}</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="profile-actions">
+    <button (click)="editProfile()" class="btn btn-success" appHoverhighlight>Edit Profile</button>
+    <button (click)="deleteProfile()" class="btn btn-danger" appHoverhighlight>Delete Profile</button>
+  </div>
+</div>

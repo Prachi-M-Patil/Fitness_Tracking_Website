@@ -1,0 +1,18 @@
+<table class="generic-table">
+    <thead>
+      <tr>
+        <th *ngFor="let column of columns">{{ column.header }}</th>
+        <th *ngIf="actions">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of data">
+        <td *ngFor="let column of columns">
+          {{ row[column.field] }}
+        </td>
+        <td *ngIf="actions">
+          <ng-container *ngTemplateOutlet="actions; context: { $implicit: row }"></ng-container>
+        </td>
+      </tr>
+    </tbody>
+  </table>

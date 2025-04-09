@@ -1,0 +1,119 @@
+/* Main container */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #eceff1, #ffffff);
+  }
+  
+  /* Card styling */
+  .auth-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .subtitle {
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 14px;
+  }
+  
+  /* Form inputs */
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #444;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Buttons */
+  .primary-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .primary-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .social-buttons {
+    margin-top: 20px;
+  }
+  
+  .google-btn {
+    background-color: #db4437;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .apple-btn {
+    background-color: black;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .facebook-btn {
+    background-color: #4267B2;
+    color: white;
+  }
+  
+  /* Social buttons hover */
+  .google-btn:hover,
+  .apple-btn:hover,
+  .facebook-btn:hover {
+    opacity: 0.9;
+  }
+  
+  /* Icons */
+  button i {
+    margin-right: 10px;
+  }
+  
+  .toggle {
+    margin-top: 20px;
+    color: #555;
+  }
+  
+  .toggle a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .toggle a:hover {
+    text-decoration: underline;
+  }
+  

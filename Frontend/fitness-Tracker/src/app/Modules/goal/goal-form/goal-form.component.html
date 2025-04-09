@@ -1,0 +1,70 @@
+<h2 class="text-center mb-4 text-primary">Create a New Goal</h2>
+<form (ngSubmit)="createGoal()" #goalForm="ngForm" class="p-4 shadow rounded bg-light">
+  <!-- Goal Name -->
+  <div class="form-group mb-3">
+    <label for="name" class="fw-bold">🏆 Goal Name:</label>
+    <input id="name" type="text" [(ngModel)]="goalData.name" name="name" required #nameInput="ngModel"
+      class="form-control rounded" placeholder="Enter your goal name" />
+    <div *ngIf="nameInput.invalid && nameInput.touched" class="text-danger small mt-1">
+      Goal name is required.
+    </div>
+  </div>
+
+  <!-- Target -->
+  <div class="form-group mb-3">
+    <label for="target" class="fw-bold">🎯 Target:</label>
+    <input id="target" type="text" [(ngModel)]="goalData.target" name="target" required #targetInput="ngModel"
+      class="form-control rounded" placeholder="Enter your target (e.g., 10km)" />
+    <div *ngIf="targetInput.invalid && targetInput.touched" class="text-danger small mt-1">
+      Target is required.
+    </div>
+  </div>
+
+  <!-- Deadline -->
+  <div class="form-group mb-3">
+    <label for="deadline" class="fw-bold">📅 Deadline (optional):</label>
+    <input id="deadline" type="date" [(ngModel)]="goalData.deadline" name="deadline" class="form-control rounded" />
+  </div>
+
+  <!-- Initial Progress -->
+  <div class="form-group mb-3">
+    <label for="progress" class="fw-bold">📊 Initial Progress (optional):</label>
+    <input id="progress" type="number" [(ngModel)]="goalData.progress" name="progress" min="0" max="100"
+      class="form-control rounded" placeholder="Enter your current progress (0–100%)" />
+  </div>
+
+  <!-- Workout Types -->
+  <div class="form-group mb-3">
+    <label for="availableWorkoutTypes" class="fw-bold">💪 Select Workout Types:</label>
+    <div class="border rounded p-3 bg-white">
+      <div class="form-check mb-2" *ngFor="let type of availableWorkoutTypes">
+        <input class="form-check-input" type="checkbox" [checked]="goalData.requiredWorkoutTypes?.includes(type)"
+          (change)="toggleWorkoutType(type, $event)" id="{{ type }}" />
+        <label class="form-check-label" for="{{ type }}">{{ type }}</label>
+      </div>
+    </div>
+
+    <!-- Selected workout types list -->
+    <div *ngIf="goalData.requiredWorkoutTypes?.length" class="mt-3">
+      <label class="fw-semibold">✅ Selected Workout Types:</label>
+      <ul class="list-group mt-2">
+        <li *ngFor="let type of goalData.requiredWorkoutTypes"
+          class="list-group-item d-flex justify-content-between align-items-center">
+          {{ type }}
+          <button type="button" class="btn btn-sm btn-outline-danger" (click)="removeWorkoutType(type)">
+            Remove
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="text-center">
+    <button type="submit" [disabled]="goalForm.invalid" class="btn btn-success px-4 mt-3 rounded-pill">
+      🚀 Create Goal
+    </button>
+  </div>
+</form>
+
+<app-goal-list class="mt-5"></app-goal-list>

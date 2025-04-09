@@ -1,0 +1,60 @@
+<div class="auth-container">
+    <div class="auth-card">
+      <h2>Welcome Back!</h2>
+      <p class="subtitle">Log in to your account</p>
+  
+      <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <!-- Username Input -->
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            id="username"
+            name="username"
+            [(ngModel)]="credentials.username"
+            placeholder="Enter your username"
+            required
+          />
+        </div>
+  
+        <!-- Password Input -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            [(ngModel)]="credentials.password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+  
+       
+  
+        <!-- Submit Button -->
+        <button class="primary-btn" type="submit" [disabled]="!loginForm.valid">
+          Log In
+        </button>
+      </form>
+  
+      <!-- Social Login Buttons -->
+      <div class="social-buttons">
+        <button class="google-btn" (click)="loginWithGoogle()">
+          <i class="fa-brands fa-google"></i> Sign in with Google
+        </button>
+        <button class="apple-btn" (click)="loginWithApple()">
+          <i class="fa-brands fa-apple"></i> Sign in with Apple
+        </button>
+        <button class="facebook-btn" (click)="loginWithFacebook()">
+          <i class="fa-brands fa-facebook"></i> Sign in with Facebook
+        </button>
+      </div>
+        <!-- Toggle to Register -->
+
+      <!-- Toggle to Register -->
+      <p class="toggle">
+        Don't have an account? <a href="/register" (click)="toggleToRegister()">Register here</a>
+      </p>
+    </div>
+  </div>
+  
